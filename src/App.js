@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from "react";// 追加占いパターンの開発中！
+
 
 function App() {
   const [name, setName] = useState("");
