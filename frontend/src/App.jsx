@@ -1,31 +1,18 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
-// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 import Home from './pages/Home';
-import About from './pages/About';
+import Fortune from './pages/Fortune';
 import NotFound from './pages/NotFound';
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <div>
-        <h1>Welcome to My React App</h1>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route component={NotFound} /> {/* 404ページ */}
-        </Switch>
-      </div>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="fortune" element={<Fortune />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default App;
