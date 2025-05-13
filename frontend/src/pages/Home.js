@@ -17,7 +17,9 @@ function Home() {
 
     try {
       // const response = await fetch('http://localhost:8000/api/fortune', {
-      const response = await fetch('http://localhost:8000', {
+      const response = await fetch('http://localhost:8000/task3/ask-ai', {
+        
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +33,7 @@ function Home() {
       // abc
       const data = await response.json();
       // 例: バックエンドのレスポンスに { "fortune": "大吉！..." } があると仮定
-      setResult(`${name}さんの運勢は…\n${data.fortune}`);
+      setResult(`${name}さんの運勢は…\n${data.answer ?? '結果が取得できませんでした。'}`);
     } catch (error) {
       console.error('エラー:', error);
       setResult('占いに失敗しました。');
