@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Home />}>
         <Route index element={<Home />} />
         <Route path="fortune" element={<Fortune />} />
         <Route path="*" element={<NotFound />} />
@@ -16,3 +16,14 @@ export default function App() {
     </Routes>
   );
 }
+import React from "react";
+
+function App() {
+    return (
+        <div>
+            <div>ここに処理を書いていきます</div>
+        </div>
+    );
+}
+
+
