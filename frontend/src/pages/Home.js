@@ -34,6 +34,7 @@ function Home() {
       const data = await response.json();
       // 例: バックエンドのレスポンスに { "fortune": "大吉！..." } があると仮定
       setResult(`${name}さんの運勢は…\n${data.answer ?? '結果が取得できませんでした。'}`);
+     
     } catch (error) {
       console.error('エラー:', error);
       setResult('占いに失敗しました。');
